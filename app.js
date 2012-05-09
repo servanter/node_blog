@@ -5,10 +5,11 @@
 
 var express = require('express')
       , routes = require('./routes')
-      , ejs = require('ejs');
+      , ejs = require('ejs')
+      , socketIo = require('socket.io');
 
     var app = module.exports = express.createServer();
-
+    var io = socketIo.listen(app);
     // Configuration
 
     app.configure(function(){
@@ -35,10 +36,23 @@ var express = require('express')
 
     app.helpers({
       author:'做最有价值的前端技术社',
-      myServer:'http://127.0.0.1:3000/public/'
+      myServer:'http://10.16.38.106:3000/public/'
 })
 // Routes
 app.get('/', routes.index);
+
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
+var userNum = 0;
+io.sockets.on('connection',function(socket){
+    var user = 'user'+userNum++;
+    socket.emit('init',{user:user});
+    socket.on('send message',function(data){
+        data.user = user;
+        //socket.emit('add message',data);
+        //socket.broadcast.emit('add message',data);
+        io.sockets.emit('add message',data);
+    });
+})
+

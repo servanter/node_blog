@@ -33,7 +33,7 @@ hr {border: none;height: 1px;}.wrapper{ overflow:hidden;}
 .content{float:left;}
 .chat-box{padding:10px 0;}
 .mes-single{overflow:hidden;}
-.mes-name{float:left;}
+.mes-name{float:left;width:150px;}
 .mes-text{float:left;}
 .sidebar{float:right;}
 
