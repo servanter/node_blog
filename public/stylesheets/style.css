@@ -1,8 +1,40 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/** css reset **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, lengend, button, input, textarea, th, td {margin: 0;padding: 0;}
+body, button, input, select, textarea {font: 12px/1.4 Arial, Helvetica, sans-serif;}
+body, table, td, div, p{word-wrap:break-word;-webkit-text-size-adjust:none;}
+
+h1{font-size: 18px; }
+h2{font-size: 16px; }
+h3{font-size: 14px; }
+h4, h5, h6{font-size: 100%;}
+
+address, cite, dfn, em, var{font-style: normal;}
+code, kbd, pre, samp, tt{font-family: "Courier New", Courier, monospace;} 
+small{font-size: 12px;} 
+
+ul, ol{list-style: none;}
+
+abbr[title], acronym[title]{border-bottom: 1px dotted;cursor: help;}
+q:before, q:after{content:'';}
+legend{color: #000;} 
+fieldset, img{border: none;} 
+button, input, select, textarea{font-size: 100%;}
+
+table {border-collapse: collapse;border-spacing: 0;}
+
+hr {border: none;height: 1px;}.wrapper{ overflow:hidden;}
+/** css reset **/
+#header,#nav,#wrapper,#footer{
+    width:90%;
+    margin:0 auto;
 }
 
-a {
-  color: #00B7FF;
-}
+
+.content{float:left;}
+.chat-box{padding:10px 0;}
+.mes-single{overflow:hidden;}
+.mes-name{float:left;}
+.mes-text{float:left;}
+.sidebar{float:right;}
+
+
