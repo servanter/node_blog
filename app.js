@@ -33,15 +33,19 @@ var express = require('express')
     app.configure('production', function(){
       app.use(express.errorHandler());
     });
-
+//创建全局变量 
     app.helpers({
-      author:'做最有价值的前端技术社',
+      author:'beihe',
       myServer:'http://10.16.38.106:3000/public/'
 })
 // Routes
 app.get('/', routes.index);
+app.get('/index.html', routes.index);
+app.get('/list?.*', routes.exec('list'));
+app.get('/article?.*', routes.exec('article'));
+app.get('*', routes.exec('404'));
 
-app.listen(3000, function(){
+app.listen(2000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
 var userNum = 0;
