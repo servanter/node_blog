@@ -41,11 +41,11 @@ var express = require('express')
 // Routes
 app.get('/', routes.index);
 app.get('/index.html', routes.index);
-app.get('/list?.*', routes.exec('list'));
-app.get('/article?.*', routes.exec('article'));
+app.get('/list?*', routes.exec('list'));
+app.get('/article?*', routes.exec('article'));
 app.get('*', routes.exec('404'));
 
-app.listen(2000, function(){
+app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
 var userNum = 0;
