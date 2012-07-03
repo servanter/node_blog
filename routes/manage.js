@@ -1,10 +1,11 @@
-var login = require('login'):
+var login = require('./login.js');
+
 exports.index = function(req,res){
     if(req.session.logged){
-        res.render('login',{
-            title:'login'
+        res.render('manage',{
+            title:'manage'
         });
     }else{
-        login.index();
+        login.index(req,res);
     }
 }

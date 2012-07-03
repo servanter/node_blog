@@ -1,16 +1,10 @@
 var mysql = require('mysql'),
+    dbOption = require('./../blog_info.js').dbOption,
     client = null;
 
-var db_options = {  
-    host: 'localhost',  
-    port: 3306,  
-    user: 'root',  
-    password: '900131', 
-    database: 'blog'  
-}; 
-
 exports.index = function(req,res){
-    client = mysql.createClient(db_options);  
+    console.log(dbOption);
+    client = mysql.createClient(dbOption);  
     client.query('SELECT * FROM blog_article',function(err,results,fields){
        if(err){
            throw err;
