@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+</head>
+<body>
+    <%- partial('header') %>
+    <ul>
+        <% for(var i = 0;i<dbdata.length;i++) {%>
+        <li><a href="dbdata[i].link"><%= dbdata[i].a_title %></a></li>
+        <% }%>
+    </ul>
+    <%- partial('footer') %>
+</body>
+</html>
