@@ -1,4 +1,2 @@
-node_web
-========
-
-node_web
+a node blog
+express + mysql
