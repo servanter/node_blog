@@ -22,6 +22,8 @@ var express = require('express')
       app.register("ejs", ejs);
       app.use(express.bodyParser());
       app.use(express.methodOverride());
+      app.use(express.cookieParser());
+      app.use(express.session({secret:'keyboard cat'}));
       app.use(app.router);
       app.use('/public',express.static(__dirname + '/public'));
     });
@@ -35,12 +37,14 @@ var express = require('express')
     });
 //创建全局变量 
     app.helpers({
-      author:'beihe',
-      myServer:'http://10.16.38.106:3000/public/'
+        author:'beihe',
+        myServer:'http://127.0.0.1:3000/public/'
 })
 // Routes
 app.get('/', routes.index);
 app.get('/index.html', routes.index);
+app.get('/manage.html',routes.exec('manage'));
+app.get('/login.html',routes.exec('login'));
 app.get('/list?*', routes.exec('list'));
 app.get('/article?*', routes.exec('article'));
 app.get('*', routes.exec('404'));

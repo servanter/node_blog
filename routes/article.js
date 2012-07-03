@@ -10,7 +10,7 @@ var db_options = {
 }; 
 
 exports.index = function(req,res){
-    //console.log(req.query);
+    console.log(req.query);
     client = mysql.createClient(db_options);  
     client.query('SELECT * FROM blog_article where a_id = ' + req.query.aid,function(err,results,fields){
        if(err){

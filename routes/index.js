@@ -14,5 +14,3 @@ exports.exec = function(action){
     var oo = require('./'+action+'.js');
     return oo.index;
 }
-
-
