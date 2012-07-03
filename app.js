@@ -45,6 +45,7 @@ app.get('/', routes.index);
 app.get('/index.html', routes.index);
 app.get('/manage.html',routes.exec('manage'));
 app.get('/login.html',routes.exec('login'));
+app.post('/login.html',routes.exec('login'));
 app.get('/list?*', routes.exec('list'));
 app.get('/article?*', routes.exec('article'));
 app.get('*', routes.exec('404'));
