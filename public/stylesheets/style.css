@@ -1,8 +1,19 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+body,dl,dd,p,blockquote,ul,ol,pre,form,h1,h2,h3,h4,h5,h6{margin:0;}
+ul,ol,th,td{padding:0;}
+ul{list-style:none;}
+table{border-collapse:collapse;}
+strong,b{font-weight:normal;}
+i,em,cite{font-style:normal;}
 
-a {
-  color: #00B7FF;
-}
+body{background:#edecee;font:12px/1.4em '微软雅黑','宋体';}
+#header{background:#2c6926;overflow:hidden;}
+#logo{float:left;}
+#blog-description{float:left;}
+#search-bar{float:left;}
+
+#content-box{overflow:hidden;}
+#article-list{overflow:hidden;}
+#side-bar{float:right;width:300px;}
+
+#footer{background:#2c6926;}
+.box{width:80%;margin:0 auto;}

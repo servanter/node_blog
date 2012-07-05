@@ -3,7 +3,12 @@ var mysql = require('mysql'),
     client = null;
 
 exports.index = function(req,res){
-    console.log(dbOption);
+    console.log(req.query);
+    var queryStr = 'SELECT * FROM blog_article';
+    if(req.query.group){
+    
+    }
+    if(req.query.
     client = mysql.createClient(dbOption);  
     client.query('SELECT * FROM blog_article',function(err,results,fields){
        if(err){

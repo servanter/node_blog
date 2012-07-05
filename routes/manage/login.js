@@ -25,7 +25,7 @@ exports.index = function(req,res){
             }
         });
     }else{
-        res.render('login',{
+        res.render('manage/login',{
            title:'login_manage'
         });
         

@@ -24,8 +24,8 @@ var express = require('express')
       app.use(express.methodOverride());
       app.use(express.cookieParser());
       app.use(express.session({secret:'keyboard cat'}));
-      app.use(app.router);
       app.use('/public',express.static(__dirname + '/public'));
+      app.use(app.router);
     });
 
     app.configure('development', function(){
@@ -38,7 +38,7 @@ var express = require('express')
 //创建全局变量 
     app.helpers({
         author:'beihe',
-        myServer:'http://127.0.0.1:3000/public/'
+        myServer:'/public/'
 })
 // Routes
 app.get('/', routes.index);
@@ -46,6 +46,8 @@ app.get('/index.html', routes.index);
 app.get('/manage/manage.html',routes.exec('manage/manage'));
 app.get('/manage/login.html',routes.exec('manage/login'));
 app.post('/manage/login.html',routes.exec('manage/login'));
+app.get('/manage/addArticle.html',routes.exec('manage/addArticle'));
+app.post('/manage/addArticle.html',routes.exec('manage/addArticle'));
 app.get('/list?*', routes.exec('list'));
 app.get('/article?*', routes.exec('article'));
 app.get('*', routes.exec('404'));

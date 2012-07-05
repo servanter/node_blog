@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title><%= title %></title>
+    <link media="all" rel="stylesheet" href="<%= myServer %>stylesheets/style.css" type="text/css" />
+    <script src="<%= myServer %>javascripts/jquery.js" type="text/javascript"></script>
+
 </head>
 <body>
     <%- partial('header') %>
-    <ul>
-        <% for(var i = 0;i<dbdata.length;i++) {%>
-        <li><a href="dbdata[i].link"><%= dbdata[i].a_title %></a></li>
-        <% }%>
-    </ul>
+    <div class="box" id="content-box">
+    <%- partial('sideBar') %>
+        <div id="article-list">
+            <% for(var i=0;i<dbdata.length;i++) {%>
+            <article>
+                <header>
+                    <h2><a href="/article?aid=<%=dbdata[i].a_id%>"><%= dbdata[i].a_title %></a></h2>  
+                    <div>
+                        <span>author:<em><%= dbdata[i].a_author %></em></span>
+                        <span>edit_time:<em><%= dbdata[i].a_edit_time %></em></span>
+                    </div>
+                </header> 
+                <section>
+                    <%= dbdata[i].a_content %>
+                </section>
+                <footer>
+                    <a href="/article?aid=<%=dbdata[i].a_id%>">view more</a>
+                </footer>
+            </article>
+            <% }%>
+        </div>
+    </div>
     <%- partial('footer') %>
 </body>
 </html>
