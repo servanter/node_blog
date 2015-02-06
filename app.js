@@ -11,6 +11,7 @@ var express = require('express')
     var app = module.exports = express.createServer();
     var io = socketIo.listen(app);
     // Configuration
+    console.log(123);
 
     app.configure(function(){
       app.set('views', __dirname + '/views');
